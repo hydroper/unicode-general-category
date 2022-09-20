@@ -247,7 +247,7 @@ function processSupplementary() {
     const scanner = new Scanner(FileSystem.readFileSync(Path.resolve(currentDirectory, 'input-supplementary.txt')));
     const {row, previousRow} = scanner;
     let currentCodePoint = 0x10000;
-    let outputBinary = Buffer.alloc(5000000);
+    let outputBinary = Buffer.alloc(1000000);
     let outputBinaryOffset = 0;
 
     scanner.next();
