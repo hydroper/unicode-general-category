@@ -62,9 +62,8 @@ class GeneralCategory {
                 if (offset == basicPlane.length) break;
                 let count = basicPlane.readUInt16LE(offset + 1);
                 compareCodePoint += count;
-                if (codePoint < compareCodePoint) {
+                if (codePoint < compareCodePoint)
                     return GeneralCategory.valueOf(basicPlane.readUInt8(offset));
-                }
                 offset += 3;
             }
         } else {
@@ -73,7 +72,8 @@ class GeneralCategory {
                 if (offset == supplementaryPlane.length) break;
                 let count = Buffer_readUInt24LE(supplementaryPlane, offset + 1);
                 compareCodePoint += count;
-                if (codePoint < compareCodePoint) return GeneralCategory.valueOf(supplementaryPlane.readUInt8(offset));
+                if (codePoint < compareCodePoint)
+                    return GeneralCategory.valueOf(supplementaryPlane.readUInt8(offset));
                 offset += 4;
             }
         }
