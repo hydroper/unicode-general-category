@@ -2,8 +2,8 @@ const FileSystem = require('fs');
 const Path = require('path');
 const currentDirectory = __dirname;
 
-const basicPlane = FileSystem.readFileSync(Path.resolve(currentDirectory, '../data/bin/basic.bin'));
-const supplementaryPlane = FileSystem.readFileSync(Path.resolve(currentDirectory, '../data/bin/supplementary.bin'));
+const basicPlane = FileSystem.readFileSync(Path.resolve(currentDirectory, '../../data/bin/basic.bin'));
+const supplementaryPlane = FileSystem.readFileSync(Path.resolve(currentDirectory, '../../data/bin/supplementary.bin'));
 
 class GeneralCategory {
     static _valueOf = new Map;
