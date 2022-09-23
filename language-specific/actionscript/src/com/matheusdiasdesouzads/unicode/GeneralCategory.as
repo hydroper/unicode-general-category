@@ -3,9 +3,9 @@ package com.matheusdiasdesouzads.unicode {
     import flash.utils.ByteArray;
 
     public final class GeneralCategory {
-        [Embed(source='../../../../../data/bin/basic.bin', mimeType='application/octet-stream')]
+        [Embed(source='../../../../../../data/bin/basic.bin', mimeType='application/octet-stream')]
         private static var basicPlaneClass:Class;
-        [Embed(source='../../../../../data/bin/supplementary.bin', mimeType='application/octet-stream')]
+        [Embed(source='../../../../../../data/bin/supplementary.bin', mimeType='application/octet-stream')]
         private static var supplementaryPlaneClass:Class;
 
         private static var basicPlane:ByteArray = ByteArray(new basicPlaneClass);
@@ -82,7 +82,7 @@ package com.matheusdiasdesouzads.unicode {
                 supplementaryPlane.position = 0;
                 while (Infinity) {
                     if (supplementaryPlane.position == supplementaryPlane.length) break;
-                    categoryValue = basicPlane.readUnsignedByte();
+                    categoryValue = supplementaryPlane.readUnsignedByte();
                     count = ByteArray_readUnsignedInt24(supplementaryPlane);
                     compareCodePoint += count;
                     if (codePoint < compareCodePoint)
