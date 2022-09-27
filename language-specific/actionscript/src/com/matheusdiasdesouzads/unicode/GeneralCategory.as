@@ -1,5 +1,4 @@
 package com.matheusdiasdesouzads.unicode {
-    import flash.utils.Dictionary;
     import flash.utils.ByteArray;
 
     public final class GeneralCategory {
@@ -13,7 +12,7 @@ package com.matheusdiasdesouzads.unicode {
         basicPlane.endian =
         supplementaryPlane.endian = 'littleEndian';
 
-        private static const _valueOf:Dictionary = new Dictionary;
+        private static const _valueOf:Vector.<GeneralCategory> = new Vector.<GeneralCategory>;
         private static const _fromString:Dictionary = new Dictionary;
 
         public static const UPPERCASE_LETTER:GeneralCategory = new GeneralCategory(0, 'Lu');
@@ -53,7 +52,7 @@ package com.matheusdiasdesouzads.unicode {
         public function GeneralCategory(value:int, str:String) {
             this._v = value;
             this._s = str;
-            GeneralCategory._valueOf[value] = this;
+            GeneralCategory._valueOf.push(this);
             GeneralCategory._fromString[str] = this;
         }
 

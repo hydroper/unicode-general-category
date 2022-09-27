@@ -3,7 +3,7 @@ const Path = require('path');
 const currentDirectory = __dirname;
 
 class GeneralCategory {
-    static _valueOf = new Map;
+    static _valueOf = [];
     static _fromString = new Map;
 
     static UPPERCASE_LETTER = new GeneralCategory(0, 'Lu');
@@ -40,12 +40,12 @@ class GeneralCategory {
     constructor(value, str) {
         this._v = value;
         this._s = str;
-        GeneralCategory._valueOf.set(value, this);
+        GeneralCategory._valueOf.push(this);
         GeneralCategory._fromString.set(str, this);
     }
 
     static valueOf(value) {
-        return GeneralCategory._valueOf.get(value) || null;
+        return GeneralCategory._valueOf[value] || null;
     }
 
     static fromString(value) {
