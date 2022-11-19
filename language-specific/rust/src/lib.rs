@@ -181,5 +181,5 @@ impl From<char> for GeneralCategory {
 }
 
 fn bytes_get_u24_le(bytes: &mut Bytes) -> usize {
-    (bytes.get_u16_le() as usize) | (bytes.get_u8() << 16) as usize
+    (bytes.get_u16_le() as usize) | ((bytes.get_u8() as usize) << 16)
 }
