@@ -164,6 +164,7 @@ impl From<char> for GeneralCategory {
             }
         } else {
             let mut plane = Bytes::from_static(SUPPLEMENTARY_PLANE);
+            compare_code_point = 0x10000;
             loop {
                 if !plane.has_remaining() {
                     break;
