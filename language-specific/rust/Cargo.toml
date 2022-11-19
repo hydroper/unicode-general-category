@@ -1,0 +1,14 @@
+[package]
+name = "fast-unicode-general-category"
+version = "1.0.0"
+edition = "2021"
+authors = ["matheusdiasdesouzads <matheusdiasdesouzads@gmail.com>"]
+repository = "https://github.com/matheusdiasdesouzads/unicode-general-category"
+license = "ISC"
+description = "Work with Unicode General Category."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bytes = "1.2.1"
+num_enum = "0.5.7"
