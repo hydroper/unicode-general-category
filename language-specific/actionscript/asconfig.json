@@ -1,0 +1,9 @@
+{
+    "config": "air",
+    "type": "lib",
+    "compilerOptions": {
+        "include-sources": ["src"],
+        "library-path": ["libs"],
+        "output": "swc/unicode-general-category.swc"
+    }
+}

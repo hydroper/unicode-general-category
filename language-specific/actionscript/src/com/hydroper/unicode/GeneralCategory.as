@@ -1,5 +1,6 @@
-package com.matheusdiasdesouzads.unicode {
+package com.hydroper.unicode {
     import flash.utils.ByteArray;
+    import flash.utils.Dictionary;
 
     public final class GeneralCategory {
         [Embed(source='../../../../../../data/bin/basic.bin', mimeType='application/octet-stream')]
@@ -12,7 +13,7 @@ package com.matheusdiasdesouzads.unicode {
         basicPlane.endian =
         supplementaryPlane.endian = 'littleEndian';
 
-        private static const _valueOf:Vector.<GeneralCategory> = new Vector.<GeneralCategory>;
+        private static const _valueOf:Vector.<GeneralCategory> = new <GeneralCategory>[];
         private static const _fromString:Dictionary = new Dictionary;
 
         public static const UPPERCASE_LETTER:GeneralCategory = new GeneralCategory(0, 'Lu');
@@ -61,6 +62,10 @@ package com.matheusdiasdesouzads.unicode {
         }
 
         public static function fromString(value:String):GeneralCategory {
+            if (!GeneralCategory._fromString.hasOwnProperty(value))
+            {
+                return null;
+            }
             return GeneralCategory._fromString[value] || null;
         }
 
